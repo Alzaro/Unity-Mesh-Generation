@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 783749447}
   - component: {fileID: 783749446}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Point Cloud Mesh Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,7 +293,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PointCloudMeshGenerator
   plyFilePath: Assets/Classic side table.ply
-  downsampleFactor: 1
+  textureFilePath: Assets/Classic side table_0.jpg
+  reduceTriangles: 1
+  reductionMode: 2
+  reductionFactor: 0.5
+  targetTriangleCount: 0
 --- !u!23 &783749447
 MeshRenderer:
   m_ObjectHideFlags: 0
