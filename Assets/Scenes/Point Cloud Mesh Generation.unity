@@ -296,7 +296,7 @@ MonoBehaviour:
   textureFilePath: Assets/Classic side table_0.jpg
   reduceTriangles: 1
   reductionMode: 2
-  reductionFactor: 0.5
+  reductionFactor: 0.8
   targetTriangleCount: 0
 --- !u!23 &783749447
 MeshRenderer:

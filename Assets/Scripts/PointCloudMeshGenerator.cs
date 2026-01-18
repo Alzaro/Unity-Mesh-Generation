@@ -25,7 +25,7 @@ public class PointCloudMeshGenerator : MonoBehaviour
     public bool reduceTriangles = true;
     public ReductionMode reductionMode = ReductionMode.VoxelClustering;
     [Range(0.01f, 1f)]
-    [Tooltip("Fraction of triangles to keep. 1 = keep all, 0.5 = keep ~50%")]
+    [Tooltip("Reduce triangles by this factor. 1 = kepp all triangles, 0.8 = reduce triangle count by ~80%, 0.2 = reduce triangle count by ~20%")]
     public float reductionFactor = 0.5f;
     [Tooltip("Optional exact target triangle count (if > 0, will attempt to reach this instead of using fraction)")]
     public int targetTriangleCount = 0;
@@ -163,7 +163,7 @@ public class PointCloudMeshGenerator : MonoBehaviour
 
         if (reduceTriangles)
         {
-            Debug.Log("TOTAL TRIANGLES BEFORE DOWNSAMPLE: " + finalTriangles.Count);
+            Debug.Log("TOTAL TRIANGLES BEFORE DOWNSAMPLE: " + finalTriangles.Count / 3);
         }
 
 
@@ -228,7 +228,7 @@ public class PointCloudMeshGenerator : MonoBehaviour
         GetComponent<MeshRenderer>().material = mat;
         if(reduceTriangles)
         {
-            Debug.Log("TOTAL TRIANGLES AFTER DOWNSAMPLE: " + mesh.triangles.Length);
+            Debug.Log("TOTAL TRIANGLES AFTER DOWNSAMPLE: " + finalTriangles.Count / 3);
         }
 
     }
